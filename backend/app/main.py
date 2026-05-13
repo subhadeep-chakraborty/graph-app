@@ -18,7 +18,7 @@ app = FastAPI(title="Effective Mass API")
 app.add_exception_handler(DataLoadError, data_load_exception_handler)
 app.add_exception_handler(DataFormatError, data_format_exception_handler)
 
-# Enable CORS (required)
+# Enable CORS
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],  # restrict in production
