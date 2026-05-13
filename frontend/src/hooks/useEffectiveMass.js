@@ -9,7 +9,7 @@ export const useEffectiveMass = () => {
   useEffect(() => {
     fetchEffectiveMass()
       .then((data) => {
-        // ✅ create a copy before sorting (important)
+        // create a copy before sorting
         const sorted = [...data].sort(
           (a, b) => a.frequency - b.frequency
         );
@@ -17,7 +17,7 @@ export const useEffectiveMass = () => {
       })
       .catch((err) => {
         console.error(err);
-        setError("Failed to load data");
+        setError(err.message);
       })
       .finally(() => setLoading(false));
   }, []);
